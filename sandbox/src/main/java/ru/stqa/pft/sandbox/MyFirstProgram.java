@@ -12,7 +12,7 @@ public class MyFirstProgram {
 
         double a = 4;
         double b = 6;
-        System.out.println("Площадь прямоугольника со строронами " + a + b + " = " + area(a, b));
+        System.out.println("Площадь прямоугольника со строронами " + a + " и " + b + " = " + area(a, b));
     }
 
     public static void hello (String somebody) {
