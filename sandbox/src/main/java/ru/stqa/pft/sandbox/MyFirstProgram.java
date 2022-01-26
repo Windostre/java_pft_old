@@ -8,11 +8,11 @@ public class MyFirstProgram {
         hello ("Mariya");
 
         double l = 5;
-        System.out.println("Площадь квадрата со стророной " + l + " = " + area(l));
+        System.out.println("Площадь квадрата со стороной " + l + " = " + area(l));
 
         double a = 4;
         double b = 6;
-        System.out.println("Площадь прямоугольника со строронами " + a + " и " + b + " = " + area(a, b));
+        System.out.println("Площадь прямоугольника со сторонами " + a + " и " + b + " = " + area(a, b));
     }
 
     public static void hello (String somebody) {
