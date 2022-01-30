@@ -3,18 +3,25 @@ package ru.stqa.pft.sandbox;
 public class MyFirstProgram {
 
   public static void main(String[] args) {
-    hello("world");
-    hello("user");
-    hello("Mariya");
 
-    Square s = new Square(5); // Создание объекта класса Square, s это не сокращение. В скобках значение параметра из конструктора
-    System.out.println("Площадь квадрата со стороной " + s.l + " = " + s.area()); // s.area() обращение к методоу
+    /* Задание №2 пункт  1*/
+    Point p1 = new Point(2, 3);
+    Point p2 = new Point(2, -1);
 
-    Rectangle r = new Rectangle(4, 6); // Создание объекта класса Rectangle, r это не сокращение. В скобках значение параметра из конструктора
-    System.out.println("Площадь прямоугольника со сторонами " + r.a + " и " + r.b + " = " + r.area());
+    /* Задание №2 пункт  3*/
+    double result = distance(p1, p2);
+    System.out.println("Растояние между точками " + "p1 (" + p1.x + "," + p1.y + ")" + " и " + "t2 (" + p2.x + "," + p2.y + ")" + " = " + result);
   }
 
-  public static void hello(String somebody) {
-    System.out.println("Hello, " + somebody + "!");
+  /* Задание №2 пункт 2*/
+  public static double distance(Point p1, Point p2) {
+    double xdelta = p1.x - p2.x;
+    double ydelta = p1.y - p2.y;
+    double sqrtxdelta = xdelta * xdelta;
+    double sqrtydelta = ydelta * ydelta;
+
+    return Math.sqrt(sqrtxdelta + sqrtydelta);
+
   }
+
 }
