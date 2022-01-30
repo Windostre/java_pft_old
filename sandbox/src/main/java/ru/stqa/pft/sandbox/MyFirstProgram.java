@@ -9,18 +9,18 @@ public class MyFirstProgram {
     Point p2 = new Point(2, -1);
 
     /* Задание №2 пункт  3*/
-    double result = distance(p1, p2);
-    System.out.println("Растояние между точками " + "p1 (" + p1.x + "," + p1.y + ")" + " и " + "t2 (" + p2.x + "," + p2.y + ")" + " = " + result);
+    double result = distance(p1, p2); // вызов функции
+    System.out.println("Растояние между точками " + "p1 (" + p1.x + "," + p1.y + ")" + " и " + "p2 (" + p2.x + "," + p2.y + ")" + " = " + result);
   }
 
   /* Задание №2 пункт 2*/
   public static double distance(Point p1, Point p2) {
-    double xdelta = p1.x - p2.x;
-    double ydelta = p1.y - p2.y;
-    double sqrtxdelta = xdelta * xdelta;
-    double sqrtydelta = ydelta * ydelta;
+    double deltax = p1.x - p2.x;
+    double deltay = p1.y - p2.y;
+    double sqrtdeltax = deltax * deltax;
+    double sqrtdeltay = deltay * deltay;
 
-    return Math.sqrt(sqrtxdelta + sqrtydelta);
+    return Math.sqrt(sqrtdeltax + sqrtdeltay);
 
   }
 
