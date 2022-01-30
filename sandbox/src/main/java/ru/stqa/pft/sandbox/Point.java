@@ -9,6 +9,10 @@ public class Point {
     this.x = x;
     this.y = y;
 
+  }
+/* Задание 2.4 -метод */
+  public double distance(Point planet) {
 
+    return Math.sqrt((this.x - planet.x) * (this.x - planet.x) + (this.y - planet.y) * (this.y - planet.y));
   }
 }
