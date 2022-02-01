@@ -14,7 +14,7 @@ public class MyFirstProgram {
   }
 
   /* Задание 2.2 функция */
-  /*public static double distance(Point earth, Point mars) {
+  /* public static double distance(Point earth, Point mars) {
 
     return Math.sqrt((earth.x - mars.x) * (earth.x - mars.x) + (earth.y - mars.y) * (earth.y - mars.y));
 
