@@ -5,7 +5,7 @@ public class MyFirstProgram {
   public static void main(String[] args) {
 
     /* Задание 2.1  объявление переменных через созданный класс */
-    Point earth = new Point(2, 3); // значения перменной = this для класса
+    Point earth = new Point(1, 3); // значения перменной = this для класса
     Point mars = new Point(2, -1);
 
     /* Задание 2.3 запуск функции */
