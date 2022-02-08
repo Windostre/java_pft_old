@@ -16,9 +16,9 @@ public class ContactCreationTests {
     login("admin", "secret");
   }
 
-  private void login(String user, String password) {
+  private void login(String username, String password) {
     wd.findElement(By.name("user")).clear();
-    wd.findElement(By.name("user")).sendKeys(user);
+    wd.findElement(By.name("user")).sendKeys(username);
     wd.findElement(By.name("pass")).clear();
     wd.findElement(By.name("pass")).sendKeys(password);
     wd.findElement(By.xpath("//input[@value='Login']")).click();
@@ -27,10 +27,9 @@ public class ContactCreationTests {
   @Test
   public void testContactCreation() throws Exception {
     initContactCreation();
-    fillContactForm();
+    fillContactForm(new ContactData("Терри", "Пратчетт", "+71231231212", "wyrdsir@gmail.com"));
     submitGroupCreation();
     returnToHomePage();
-
   }
 
   private void returnToHomePage() {
@@ -41,19 +40,19 @@ public class ContactCreationTests {
     wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
   }
 
-  private void fillContactForm() {
+  private void fillContactForm(ContactData contactData) {
     wd.findElement(By.name("firstname")).click();
     wd.findElement(By.name("firstname")).clear();
-    wd.findElement(By.name("firstname")).sendKeys("Терри");
+    wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstName());
     wd.findElement(By.name("lastname")).click();
     wd.findElement(By.name("lastname")).clear();
-    wd.findElement(By.name("lastname")).sendKeys("Пратчетт");
+    wd.findElement(By.name("lastname")).sendKeys(contactData.getLastName());
     wd.findElement(By.name("mobile")).click();
     wd.findElement(By.name("mobile")).clear();
-    wd.findElement(By.name("mobile")).sendKeys("+71231231212");
+    wd.findElement(By.name("mobile")).sendKeys(contactData.getMobileNumber());
     wd.findElement(By.name("email")).click();
     wd.findElement(By.name("email")).clear();
-    wd.findElement(By.name("email")).sendKeys("wyrdsir@gmail.com");
+    wd.findElement(By.name("email")).sendKeys(contactData.getEmail());
   }
 
   private void initContactCreation() {
