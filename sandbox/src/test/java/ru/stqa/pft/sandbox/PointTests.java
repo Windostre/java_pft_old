@@ -21,7 +21,7 @@ public class PointTests {
 
   @Test
   void testPoint3() {
-    //Point earth = new Point(2,3);
+    Point earth = new Point(2,3);
     Point mars = new Point(1  ,-1);
     Assert.assertEquals(mars.distance(mars), 0);
   }
