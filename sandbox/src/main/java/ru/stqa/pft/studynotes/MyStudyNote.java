@@ -21,7 +21,7 @@ public class MyStudyNote {
   public static void hello(String somebody) {
     System.out.println("Hello, " + somebody + "!");
 
-    /*математические выражения
+    /*математические выраже ния
     System.out.println(2 + 2);
     System.out.println(2 * 2);
     System.out.println(2 / 2);
