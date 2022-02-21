@@ -84,4 +84,12 @@ public class TestBase {
       return false;
     }
   }
+
+  protected void deleteSelectedGroups() {
+    wd.findElement(By.xpath("//div[@id='content']/form/input[5]")).click();
+  }
+
+  protected void selectGroup() {
+    wd.findElement(By.name("selected[]")).click();
+  }
 }
