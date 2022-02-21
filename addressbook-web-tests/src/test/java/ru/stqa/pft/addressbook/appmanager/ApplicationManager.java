@@ -11,6 +11,7 @@ import java.time.Duration;
 public class ApplicationManager {
   protected WebDriver wd;  //Здесь код отличается от лекции: FirefoxDriver wd;
 
+  private NavigationHelper navigationHelper;
   private GroupHelper groupHelper;
 
   public void init() {
@@ -18,6 +19,7 @@ public class ApplicationManager {
     wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
     wd.get("http://localhost/addressbook/group.php");
     groupHelper = new GroupHelper(wd);
+    navigationHelper = new NavigationHelper(wd);
     login("admin", "secret");
   }
 
@@ -32,10 +34,6 @@ public class ApplicationManager {
 
   public void logout() {
     wd.findElement(By.linkText("Logout")).click();
-  }
-
-  public void gotoGroupPage() {
-    wd.findElement(By.linkText("groups")).click();
   }
 
   public void stop() {
@@ -62,5 +60,9 @@ public class ApplicationManager {
 
   public GroupHelper getGroupHelper() {
     return groupHelper;
+  }
+
+  public NavigationHelper getNavigationHelper() {
+    return navigationHelper;
   }
 }
