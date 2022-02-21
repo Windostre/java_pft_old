@@ -11,7 +11,7 @@ public class ContactCreationTests {
   @BeforeMethod(alwaysRun = true)
   public void setUp() throws Exception {
     wd = new FirefoxDriver();
-    wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+    wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     wd.get("http://localhost/addressbook/");
     login("admin", "secret");
   }

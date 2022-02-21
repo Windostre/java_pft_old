@@ -1,5 +1,6 @@
 package com.example.tests;
 
+import java.time.Duration;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.testng.annotations.*;
@@ -18,7 +19,7 @@ public class GroupDeletionTests {
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
     baseUrl = "https://www.google.com/";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
   }
 
   @Test
