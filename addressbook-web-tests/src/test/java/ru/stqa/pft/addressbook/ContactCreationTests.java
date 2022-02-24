@@ -1,10 +1,9 @@
-package ru.stqa.pft.addressbook.tests;
+package ru.stqa.pft.addressbook;
 
 import java.time.Duration;
 import org.testng.annotations.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import ru.stqa.pft.addressbook.model.ContactData;
 
 public class ContactCreationTests {
   private WebDriver wd;
@@ -29,7 +28,7 @@ public class ContactCreationTests {
   public void testContactCreation() throws Exception {
     initContactCreation();
     fillContactForm(new ContactData("Терри", "Пратчетт", "+71231231212", "wyrdsir@gmail.com"));
-    submitGroupCreation();
+    submitContactCreation();
     returnToHomePage();
   }
 
@@ -37,7 +36,7 @@ public class ContactCreationTests {
     wd.findElement(By.linkText("home page")).click();
   }
 
-  private void submitGroupCreation() {
+  private void submitContactCreation() {
     wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
   }
 
