@@ -10,9 +10,7 @@ public class GroupHelper extends HelperBase {
     super(wd); // метод super - обращение к конструтору базового класса HelperBase
   }
 
-  public void returnToGroupPage() {
-    click(By.linkText("group page"));
-  }
+
 
   public void submitGroupCreation() {
     click(By.name("submit"));

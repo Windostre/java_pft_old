@@ -8,9 +8,6 @@ public class ContactHelper extends HelperBase {
   public ContactHelper(WebDriver wd) {
     super(wd); // метод super - обращение к конструтору базового класса HelperBase
   }
-  public void returnToHomePage() {
-    wd.findElement(By.linkText("home page")).click();
-  }
 
   public void submitContactCreation() {
     wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
