@@ -23,18 +23,16 @@ public class ContactHelper extends HelperBase {
   public void initContactCreation() {
     click(By.linkText("add new"));
   }
+
   public void selectContact() {
     click(By.name("selected[]"));
-  }
-  public void confirmContactDelete() {
-    click(By.linkText("home"));
   }
 
   public void pressDeleteContact() {
     click(By.xpath("//input[@value='Delete']"));
   }
 
-  public void closeAlert() {
+  public void confirmContactDelete() {
     wd.switchTo().alert().accept();
   }
 
