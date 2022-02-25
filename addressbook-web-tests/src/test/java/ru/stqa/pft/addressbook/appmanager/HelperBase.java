@@ -40,7 +40,5 @@ public class HelperBase {
     }
   }
 
-  public void returnToHomePage() {
-    wd.findElement(By.linkText("home page")).click();
-  }
+
 }
