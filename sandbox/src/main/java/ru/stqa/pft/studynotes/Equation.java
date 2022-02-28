@@ -30,7 +30,7 @@ public class Equation {
       n = 0;
     } else {
       n = -1;
-    }
+    } 
   }
 
   public int rootNumber() {
