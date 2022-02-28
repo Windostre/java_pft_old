@@ -24,13 +24,13 @@ public class ApplicationManager {
   }
 
   public void init() {
-    if (browser == "firefox") { // можно вместо BrowserType.FireFox
+    if (browser.equals("firefox")) { // можно вместо BrowserType.FireFox
       wd = new FirefoxDriver();
-    } else if (browser == BrowserType.CHROME) {
+    } else if (browser.equals(BrowserType.CHROME)) {
       wd = new ChromeDriver();
-    } else if (browser == BrowserType.IE) {
+    } else if (browser.equals(BrowserType.IE)) {
       wd = new InternetExplorerDriver();
-    } else if (browser == BrowserType.EDGE) {
+    } else if (browser.equals(BrowserType.EDGE)) {
       wd = new EdgeDriver();
     }
     wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
