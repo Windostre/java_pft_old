@@ -27,6 +27,7 @@ public class HelperBase {
     }
   }
 
+  /* Перехват исключений */
   public boolean isAlertPresent() {
     try {
       wd.switchTo().alert();
