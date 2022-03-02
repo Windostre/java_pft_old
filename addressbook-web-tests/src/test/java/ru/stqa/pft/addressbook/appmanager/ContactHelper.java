@@ -21,10 +21,10 @@ public class ContactHelper extends HelperBase {
     type(By.name("mobile"), contactData.getMobileNumber());
     type(By.name("mobile"), contactData.getMobileNumber());
 
-    if(creation) {
+    if (creation) {
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
     } else {
-    Assert.assertFalse(isElementPresent(By.name("new_group")));
+      Assert.assertFalse(isElementPresent(By.name("new_group")));
     }
   }
 
