@@ -24,7 +24,7 @@ public class ApplicationManager {
   }
 
   public void init() {
-    if (browser.equals("firefox")) { // можно вместо BrowserType.FireFox
+    if (browser.equals(BrowserType.FIREFOX)) { // можно вместо BrowserType.FireFox "firefox"
       wd = new FirefoxDriver();
     } else if (browser.equals(BrowserType.CHROME)) {
       wd = new ChromeDriver();
