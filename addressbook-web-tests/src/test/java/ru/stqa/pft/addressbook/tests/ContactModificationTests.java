@@ -12,20 +12,20 @@ public class ContactModificationTests extends TestBase {
     if (!app.getContactHelper().isThereAContact()) {
       app.getNavigationHelper().gotoGroupPage();
       /* Проверка наличия группы для создания контакта, если нет - создать*/
-      if (!app.getGroupHelper().isThereAGroup()) {
-        app.getGroupHelper().createGroup(new GroupData("test1", null, null));
+        if (!app.getGroupHelper().isThereAGroup()) {
+        app.getGroupHelper().createGroup(new GroupData("group1", null, null));
       }
-      app.getContactHelper().createContact(new ContactData("Mariya", "Ivanovna", "Petrova"
-              , "TestNick", "3 Vavilova STR", "+7(123)123-12-12", "test_mail@test.com"
-              , null), true);
+      app.getContactHelper().createContact(new ContactData("NewFirst", "NewMiddle", "NewLast"
+              , "New", "3 Vavilova STR", "+7(123)123-12-12", "new@test.com"
+              , "group1"));
     }
 
     /* Тест */
     app.getNavigationHelper().goToHomePage();
     app.getContactHelper().selectContact();
     app.getContactHelper().initContactModification();
-    app.getContactHelper().fillContactForm(new ContactData("Ivan", "Ivanovich", "Petrov"
-            , "Modified Nick", "Modified address", null, "test_mail@test.com"
+    app.getContactHelper().fillContactForm(new ContactData("ModifiedFirst", "ModifiedMiddle", "ModifiedLast"
+            , "ModifiedNick", "Modified address", "8-00000-00-00", "modified@test.com"
             , null), false);
     app.getContactHelper().submitContactModification();
     app.getNavigationHelper().returnLinkToHomePage();

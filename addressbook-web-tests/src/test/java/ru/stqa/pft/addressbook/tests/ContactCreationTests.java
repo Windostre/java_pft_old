@@ -11,14 +11,14 @@ public class ContactCreationTests extends TestBase {
     /*  Проверка наличия группы для создания контакта, если нет - создать */
     app.getNavigationHelper().gotoGroupPage();
     if (!app.getGroupHelper().isThereAGroup()) {
-      app.getGroupHelper().createGroup(new GroupData("test1", null, null));
+      app.getGroupHelper().createGroup(new GroupData("group1", null, null));
     }
 
     /* Тест */
     app.getContactHelper().initContactCreation();
-    app.getContactHelper().fillContactForm(new ContactData("Mariya", "Ivanovna", "Petrova"
-            , "TestNick", "3 Vavilova STR", "+7(123)123-12-12", "test_mail@test.com"
-            , null), true);
+    app.getContactHelper().fillContactForm(new ContactData("NewFirst", "NewMiddle", "NewLast"
+            , "New", "3 Vavilova STR", "+7(123)123-12-12", "new@test.com"
+            , null ), true);
     app.getContactHelper().submitContactCreation();
     app.getNavigationHelper().returnLinkToHomePage();
     app.getSessionHelper().logout();
