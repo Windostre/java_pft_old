@@ -15,17 +15,21 @@ public class ContactHelper extends HelperBase {
     click(By.name("submit"));
   }
 
-  public void fillContactForm(ContactData contactData, boolean creation) {
-    type(By.name("firstname"), contactData.getFirstName());
-    type(By.name("middlename"), contactData.getMiddleName());
-    type(By.name("lastname"), contactData.getLastName());
-    type(By.name("nickname"), contactData.getNickName());
-    type(By.name("address"), contactData.getAddress());
-    type(By.name("mobile"), contactData.getMobileNumber());
-    type(By.name("email"), contactData.getEmail());
+  public void fillContactForm(ContactData contact, boolean creation) {
+    type(By.name("firstname"), contact.getFirstName());
+    type(By.name("middlename"), contact.getMiddleName());
+    type(By.name("lastname"), contact.getLastName());
+    type(By.name("nickname"), contact.getNickName());
+    type(By.name("address"), contact.getAddress());
+    type(By.name("mobile"), contact.getMobileNumber());
+    type(By.name("email"), contact.getEmail());
 
     if (creation) {
-      new Select(wd.findElement(By.name("new_group"))).selectByIndex(1);
+      if (contact.getGroup() != null) {
+        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contact.getGroup());
+      } else {
+        new Select(wd.findElement(By.name("new_group"))).selectByIndex(1);
+      }
     } else {
       Assert.assertFalse(isElementPresent(By.name("new_group")));
     }
@@ -55,9 +59,9 @@ public class ContactHelper extends HelperBase {
     click(By.name("update"));
   }
 
-  public void createContact(ContactData contact, boolean creation) {
+  public void createContact(ContactData contact) {
     initContactCreation();
-    fillContactForm(contact, creation);
+    fillContactForm(contact, true);
     submitContactCreation();
   }
 
