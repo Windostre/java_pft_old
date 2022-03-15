@@ -10,7 +10,7 @@ public class ContactCreationTests extends TestBase {
   public void testContactCreation() throws Exception {
     /*  Проверка наличия группы для создания контакта, если нет - создать */
     app.getNavigationHelper().gotoGroupPage();
-    if (!app.getGroupHelper().isThereAGroup()) {
+   if (!app.getGroupHelper().isThereAGroup()) {
       app.getGroupHelper().createGroup(new GroupData("group1", null, null));
     }
 
@@ -18,7 +18,7 @@ public class ContactCreationTests extends TestBase {
     app.getContactHelper().initContactCreation();
     app.getContactHelper().fillContactForm(new ContactData("NewFirst", "NewMiddle", "NewLast"
             , "New", "3 Vavilova STR", "+7(123)123-12-12", "new@test.com"
-            , null ), true);
+            , "group1" ), true);
     app.getContactHelper().submitContactCreation();
     app.getNavigationHelper().returnLinkToHomePage();
     app.getSessionHelper().logout();

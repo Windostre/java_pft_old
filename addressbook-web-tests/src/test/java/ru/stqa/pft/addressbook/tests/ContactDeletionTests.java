@@ -12,11 +12,12 @@ public class ContactDeletionTests extends TestBase {
   public void testContactDeletion() throws Exception {
     /* Предусловие: проверка наличия контакта, если нет - создать*/
     if (!app.getContactHelper().isThereAContact()) {
-      app.getNavigationHelper().gotoGroupPage();
-      /* Проверка наличия группы для создания контакта, если нет - создать*/
-      //if (!app.getGroupHelper().isThereAGroup()) {
+      //app.getNavigationHelper().gotoGroupPage();
+      /* Проверка наличия группы для создания контакта, если нет - создать
+      if (!app.getGroupHelper().isThereAGroup()) {
         //app.getGroupHelper().createGroup(new GroupData("group1", null, null));
-     // }
+      }
+      */
       app.getContactHelper().createContact(new ContactData("NewFirst", "NewMiddle", "NewLast"
               , "New", "3 Vavilova STR", "+7(123)123-12-12", "new@test.com"
               , null));
